@@ -50,6 +50,10 @@ body {
                 font-weight: $fw-700;
                 transform: translateY(11%);
             }
+
+            &:focus {
+                outline-color: $color-primary-purple;
+            }
         }
     }
     }
@@ -80,6 +84,14 @@ body {
                 position: absolute;
                 inset: 0;
                 margin: auto;
+            }
+
+            &:active {
+                background-color: $color-neutral-offblack;
+            }
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }
