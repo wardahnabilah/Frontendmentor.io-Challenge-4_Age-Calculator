@@ -10,33 +10,35 @@
     <title>Frontend Mentor | Age calculator app</title>
 </head>
 <body>
-    <div class="container">
+    <section class="container">
         <div class="form-container">
             <form action="">
                 <div class="day">
-                    <label for="day">DAY</label>
-                    <input type="number" name="day" placeholder="DD">
+                    <label class="label" for="day">DAY</label>
+                    <input class="input" type="number" id="day" name="day" placeholder="DD">
                 </div>
                 <div class="month">
-                    <label for="month">MONTH</label>
-                    <input type="number" name="month" placeholder="MM">
+                    <label class="label" for="month">MONTH</label>
+                    <input class="input" type="number" id="month" name="month" placeholder="MM">
                 </div>
                 <div class="year">
-                    <label for="year">YEAR</label>
-                    <input type="number" name="year" placeholder="YY">
+                    <label class="label" for="year">YEAR</label>
+                    <input class="input" type="number" id="year" name="year" placeholder="YY">
                 </div>
             </form>
         </div>
         <div class="divider">
             <div class="line"></div>
-            <img src="./assets/images/icon-arrow.svg" alt="button for calculate the result">
+            <div class="button">
+                <img src="./assets/images/icon-arrow.svg" alt="button for calculate the result">
+            </div>
         </div>
         <div class="result-container">
-            <div class="result__years"><span>--</span> years</div>
-            <div class="result__months"><span>--</span> months</div>
-            <div class="result__days"><span>--</span> days</div>
+            <div class="result__text"><span class="number">--</span> years</div>
+            <div class="result__text"><span class="number">--</span> months</div>
+            <div class="result__text"><span class="number">--</span> days</div>
         </div> 
-    </div>
+    </section>
 
     <footer>
         <div class="attribution">

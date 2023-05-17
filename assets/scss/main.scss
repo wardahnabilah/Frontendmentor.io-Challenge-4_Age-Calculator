@@ -1,0 +1,84 @@
+@use './abstract' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-neutral-offwhite;
+    font-family: $ff-poppins;
+}
+
+.container {
+    width: 52.5rem;
+    background-color: $color-neutral-white;
+    border-radius: 1.25rem 1.25rem 12.375rem 1.25rem;
+}
+
+// Form
+.form-container {
+    .label {
+        font-weight: $fw-700;
+        color: $color-neutral-smokeygrey;
+    }
+
+    .input {
+        // height: 4.375rem;
+        padding: 1.5rem;
+        border: .5px solid $color-neutral-lightgrey;
+        border-radius: .5rem;
+
+        &::placeholder {
+            font-family: $ff-poppins;
+            font-size: $fs-32;
+            font-weight: $fw-700;
+            transform: translateY(15%);
+        }
+    }
+}
+
+// Divider
+.divider {
+    .line {
+        height: 1px;
+        background-color: $color-neutral-lightgrey;
+    }
+
+    .button {
+        width: 6rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: $color-primary-purple;
+        position: relative;
+
+        img {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+        }
+    }
+}
+
+// Result
+.result {
+    &__text {
+        font-size: $fs-100;
+        font-weight: $fw-800;
+        font-style: italic;
+
+        .number {
+            color: $color-primary-purple;
+        }
+    }
+
+}
+
+// Footer
+footer {
+    a {
+        text-decoration: none;
+        font-weight: $fw-700;
+        color: $color-primary-purple;
+    }
+}
