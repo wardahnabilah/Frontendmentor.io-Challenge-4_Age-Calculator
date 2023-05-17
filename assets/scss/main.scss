@@ -6,56 +6,81 @@
 }
 
 body {
+    height: 100vh;
     background-color: $color-neutral-offwhite;
     font-family: $ff-poppins;
+    display: grid;
+    align-items: center;
 }
 
 .container {
     width: 52.5rem;
+    margin-inline: auto;
+    padding: 3.5rem 3.5rem 3.125rem;
     background-color: $color-neutral-white;
     border-radius: 1.25rem 1.25rem 12.375rem 1.25rem;
 }
 
 // Form
 .form-container {
-    .label {
-        font-weight: $fw-700;
-        color: $color-neutral-smokeygrey;
-    }
-
-    .input {
-        // height: 4.375rem;
-        padding: 1.5rem;
-        border: .5px solid $color-neutral-lightgrey;
-        border-radius: .5rem;
-
-        &::placeholder {
-            font-family: $ff-poppins;
-            font-size: $fs-32;
+    .form {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    
+    .field {
+        max-width: 10rem;
+        display: flex;
+        flex-direction: column;
+        
+        .label {
             font-weight: $fw-700;
-            transform: translateY(15%);
+            letter-spacing: .25rem;
+            color: $color-neutral-smokeygrey;
         }
+    
+        .input {
+            padding: 1.5rem;
+            border: .5px solid $color-neutral-lightgrey;
+            border-radius: .5rem;
+    
+            &::placeholder {
+                font-family: $ff-poppins;
+                font-size: $fs-32;
+                font-weight: $fw-700;
+                transform: translateY(11%);
+            }
+        }
+    }
     }
 }
 
 // Divider
 .divider {
+    padding-block: 2.875rem 5rem;
+    position: relative;
+
     .line {
         height: 1px;
         background-color: $color-neutral-lightgrey;
     }
 
-    .button {
-        width: 6rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background-color: $color-primary-purple;
-        position: relative;
+    .button-container {
+        position: absolute;
+        inset: 0 0 0 auto;
 
-        img {
-            position: absolute;
-            inset: 0;
-            margin: auto;
+        .button {
+            width: 6rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: $color-primary-purple;
+            position: relative;
+    
+            img {
+                position: absolute;
+                inset: 0;
+                margin: auto;
+            }
         }
     }
 }
@@ -63,6 +88,7 @@ body {
 // Result
 .result {
     &__text {
+        margin-top: -2.5rem;
         font-size: $fs-100;
         font-weight: $fw-800;
         font-style: italic;
@@ -76,6 +102,10 @@ body {
 
 // Footer
 footer {
+    position: absolute;
+    inset: auto 0 0;
+    text-align: center;
+
     a {
         text-decoration: none;
         font-weight: $fw-700;
