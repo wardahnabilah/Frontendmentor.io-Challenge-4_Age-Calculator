@@ -18,25 +18,27 @@
         <div class="form-container">
             <form class="form">
                 <div class="form__input">
-                    <div class="field">
-                        <label class="label" for="day">DAY</label>
+                    <div class="field" data-day="invalid">
+                        <label class="label day" for="day">DAY</label>
                         <input class="input" type="number" id="day" name="day" placeholder="DD">
-                        <span class="error-alert">Must be a valid date</span>
+                        <div class="error-alert day"></div>
                     </div>
-                    <div class="field">
-                        <label class="label" for="month">MONTH</label>
+                    <div class="field" data-month="invalid">
+                        <label class="label month" for="month">MONTH</label>
                         <input class="input" type="number" id="month" name="month" placeholder="MM">
+                        <div class="error-alert month"></div>
                     </div>
-                    <div class="field">
-                        <label class="label" for="year">YEAR</label>
-                        <input class="input" type="number" id="year" name="year" placeholder="YY">
+                    <div class="field" data-year="invalid">
+                        <label class="label year" for="year">YEAR</label>
+                        <input class="input" type="number" id="year" name="year" placeholder="YYYY">
+                        <div class="error-alert year"></div>
                     </div>
                 </div>
                 <!-- Button -->
                 <div class="divider">
                     <div class="line"></div>
                     <div class="button">
-                        <button class="button-background" type="submit">
+                        <button class="button-background">
                             <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
                                 <g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g>
                             </svg>
@@ -46,9 +48,9 @@
             </form>
         </div>
         <div class="result-container">
-            <div class="result__text"><span class="number">--</span> years</div>
-            <div class="result__text"><span class="number">--</span> months</div>
-            <div class="result__text"><span class="number">--</span> days</div>
+            <div class="result__text"><span class="number years-result">--</span> years</div>
+            <div class="result__text"><span class="number months-result">--</span> months</div>
+            <div class="result__text"><span class="number days-result">--</span> days</div>
         </div> 
     </section>
 
