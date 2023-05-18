@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -14,23 +15,42 @@ body {
 }
 
 .container {
-    width: 52.5rem;
+    width: 65vw;
+    max-width: 52.5rem;
     margin-inline: auto;
     padding: 3.5rem 3.5rem 3.125rem;
     background-color: $color-neutral-white;
-    border-radius: 1.25rem 1.25rem 12.375rem 1.25rem;
+    border-radius: 1.25rem 1.25rem 7rem 1.25rem;
+
+    @include breakpoint-down(large) {
+        min-width: 32rem;
+        width: 45vw;
+    }
+
+    @include breakpoint-down(small) {
+        width: 90vw;
+        min-width: 21.5rem;
+        padding: 3.25rem 1.5rem 2.75rem;
+    }
 }
 
 // Form
 .form-container {
     .form {
-        // width: 100%;
+        width: 75%;
         display: flex;
-        flex-direction: row;
         gap: 2rem;
+
+        @include breakpoint-down(large) {
+            width: 85%;
+            gap: 1rem;
+        }
+
+        @include breakpoint-down(small) {
+            width: 100%;
+        }
     
     .field {
-        width: 10rem;
         display: flex;
         flex-direction: column;
         
@@ -39,68 +59,110 @@ body {
             letter-spacing: .25rem;
             color: $color-neutral-smokeygrey;
 
-            &.invalid {
+                @include breakpoint-down(small) {
+                    font-size: $fs-12;
+                }
+
+                &.invalid {
+                    color: $color-primary-lightred;
+                }
+            }
+        
+            .input {
+                width: 100%;
+                padding: .5em .75em;
+                border: .5px solid $color-neutral-lightgrey;
+                border-radius: .5rem;
+                font-family: $ff-poppins;
+                font-size: $fs-32;
+                font-weight: $fw-700;
+
+                @include breakpoint-down(large) {
+                    font-size: $fs-26;
+                }
+
+                @include breakpoint-down(small) {
+                    font-size: $fs-20;
+                }
+
+                &:focus {
+                    outline-color: $color-primary-purple;
+                }
+                
+                &.invalid {
+                    outline-color: $color-primary-lightred;
+                }
+            }
+
+            .error-alert {
+                margin-top: .5rem;
+                display: none;
+                font-size: $fs-14;
+                font-style: italic;
                 color: $color-primary-lightred;
+
+                @include breakpoint-down(large) {
+                    font-size: $fs-12;
+                }
+
+                &.invalid {
+                    display: block;
+                }
             }
         }
-    
-        .input {
-            padding: 1rem 1.5rem;
-            border: .5px solid $color-neutral-lightgrey;
-            border-radius: .5rem;
-            font-family: $ff-poppins;
-            font-size: $fs-32;
-            font-weight: $fw-700;
-
-            &:focus {
-                outline-color: $color-primary-purple;
-            }
-            
-            &.invalid {
-                outline-color: $color-primary-lightred;
-            }
-        }
-
-        .error-alert {
-            margin-top: .5rem;
-            display: none;
-            font-size: $fs-14;
-            font-style: italic;
-            color: $color-primary-lightred;
-
-            &.invalid {
-                display: block;
-            }
-        }
-    }
     }
 }
 
 // Divider
 .divider {
-    padding-block: 2.875rem 5rem;
+    margin-top: 3rem;
     position: relative;
+
+    @include breakpoint-down(small) {
+        margin-top: 4rem;
+    }
 
     .line {
         height: 1px;
         background-color: $color-neutral-lightgrey;
     }
 
-    .button-container {
-        position: absolute;
-        inset: 0 0 0 auto;
+    .button {
+        --button-width: 6rem;
 
-        .button {
-            width: 6rem;
+        width: var(--button-width);
+        aspect-ratio: 1;
+        position: relative;
+        bottom: calc(var(--button-width) / 2);
+        margin-left: auto;
+
+        @include breakpoint-down(large) {
+            --button-width: 5rem;
+        }
+
+        @include breakpoint-down(small) {
+            --button-width: 4rem;
+            margin-inline: auto;
+        }
+
+        &-background {
+            width: 100%;
             aspect-ratio: 1;
             border-radius: 50%;
             background-color: $color-primary-purple;
-            position: relative;
     
-            img {
+            .arrow {
                 position: absolute;
                 inset: 0;
                 margin: auto;
+
+                @include breakpoint-down(small) {
+                    width: 1.5rem;
+
+                    g {
+                        stroke-width: 4;
+                    }
+                }
             }
 
             &:active {
@@ -121,6 +183,20 @@ body {
         font-size: $fs-100;
         font-weight: $fw-800;
         font-style: italic;
+
+        @include breakpoint-down(large) {
+            font-size: $fs-72;
+        }
+
+        @include breakpoint-down(medium) {
+            text-align: center;
+        }
+
+        @include breakpoint-down(small) {
+            font-size: $fs-54;
+            line-height: 6.25rem;
+            text-align: left;
+        }
 
         .number {
             color: $color-primary-purple;
