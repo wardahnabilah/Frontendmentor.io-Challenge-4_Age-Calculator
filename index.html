@@ -4,39 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Icon and Stylesheet -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- Javascript -->
+    <script src="./assets/js/script.js" defer></script>
 
     <title>Frontend Mentor | Age calculator app</title>
 </head>
 <body>
     <section class="container">
         <div class="form-container">
-            <form class="form" action="">
-                <div class="field">
-                    <label class="label" for="day">DAY</label>
-                    <input class="input" type="number" id="day" name="day" placeholder="DD">
-                    <span class="error-alert">Must be a valid date</span>
+            <form class="form">
+                <div class="form__input">
+                    <div class="field">
+                        <label class="label" for="day">DAY</label>
+                        <input class="input" type="number" id="day" name="day" placeholder="DD">
+                        <span class="error-alert">Must be a valid date</span>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="month">MONTH</label>
+                        <input class="input" type="number" id="month" name="month" placeholder="MM">
+                    </div>
+                    <div class="field">
+                        <label class="label" for="year">YEAR</label>
+                        <input class="input" type="number" id="year" name="year" placeholder="YY">
+                    </div>
                 </div>
-                <div class="field">
-                    <label class="label" for="month">MONTH</label>
-                    <input class="input" type="number" id="month" name="month" placeholder="MM">
-                </div>
-                <div class="field">
-                    <label class="label" for="year">YEAR</label>
-                    <input class="input" type="number" id="year" name="year" placeholder="YY">
+                <!-- Button -->
+                <div class="divider">
+                    <div class="line"></div>
+                    <div class="button">
+                        <button class="button-background" type="submit">
+                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+                                <g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </form>
-        </div>
-        <div class="divider">
-            <div class="line"></div>
-            <div class="button">
-                <div class="button-background">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
-                        <g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g>
-                    </svg>
-                </div>
-            </div>
         </div>
         <div class="result-container">
             <div class="result__text"><span class="number">--</span> years</div>
